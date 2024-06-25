@@ -76,7 +76,7 @@ input{
   border-bottom: 0.2rem solid #15133c;
   outline: none;
 }
-.pagination-button{
+.pagination_btn{
   width: 100%;
   display: flex;
   justify-content: center;
@@ -91,4 +91,23 @@ button{
   margin: 3rem;
   cursor: pointer;
   display: inline-block;
+}
+/*responsive layout*/
+@media (max-width:998px){
+  html{
+    font-size: 56%;
+  }
+  .card{
+    min-width: 45rem;
+    padding: 2.5rem;
+  }
+}
+@media (max-width: 768px){
+  html{
+    font-size:51%;
+  }
+  .card{
+    min-width: 35rem;
+    padding: 2rem;
+  }
 }
