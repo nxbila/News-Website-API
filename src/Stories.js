@@ -15,7 +15,7 @@ const Stories = () => {
     <div className="stories-div">
     {hits.map((curPost) => {
         const {title, author, objectID, url, num_comments} = curPost;
-        return( <>
+        return( 
         <div className = "card" key={objectID}>
         <h2>{title}</h2>
         <p>By <span>{author} </span>|<span> {num_comments} </span> comments</p>
@@ -24,7 +24,6 @@ const Stories = () => {
             <a href='#' onClick = {() => removePost(objectID)}>Remove</a>
         </div>
         </div>
-        </>
         )
     })}
     </div>

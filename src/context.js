@@ -44,11 +44,23 @@ const AppProvider = ({children}) => {
     const removePost = (post_ID) => {
         dispatch({type: "REMOVE_POST", payload: post_ID});
     }
+    //pagination
+    const getNextPage = () => {
+        dispatch({
+            type: "NEXT_PAGE",
+        })
+    }
+    const getPrevPage = () => {
+        dispatch({
+            type: "PREV_PAGE",
+        })
+    }
+
 
     useEffect(() => {
         fetchAPIdata(`${API}query=${state.query}&page=${state.page}`);
-    },[state.query]);
-    return <AppContext.Provider value = {{...state, removePost, searchPost}}>{children}</AppContext.Provider>
+    },[state.query, state.page]);
+    return <AppContext.Provider value = {{...state, removePost, searchPost, getNextPage, getPrevPage }}>{children}</AppContext.Provider>
 };
 
 //Create custom hook
